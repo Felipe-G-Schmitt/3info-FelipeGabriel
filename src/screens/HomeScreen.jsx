@@ -1,44 +1,74 @@
-import { useEffect, useState } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { FlatList, View } from "react-native";
-import { Text, TextInput } from "react-native-paper";
+import { View } from "react-native";
+import { Button, Text, TextInput } from "react-native-paper";
 import { db } from "../config/firebase";
 
 /**
      * Criar um TextInput que faça buscas no banco e exiba em um Flatlist
      * Lembre-se de usar a expressão "utilizando a Web Version 9 do Firebase"
      */
-export default function HomeScreen() {
-    const [busca, setBusca] = useState(''); //o useState é responsavel por criar variaveis ou estados em React
-    const [resultado, setResultado] = useState([]);
-
-    async function buscarProduto() {
-        const produtoRef = collection(db, 'produto');
-        const buscaProduto = query(produtoRef, where('NomeDoProduto', '==', busca));
-        // neste momento que a busca é realmente executada no banco de dados
-        const resultadoSnapshot = await getDocs(buscaProduto);
-
-        const listaProdutos = resultadoSnapshot.docs.map(doc => doc.data());
-        console.log(listaProdutos);
-        setResultado(listaProdutos);
-
-        //console.log(resultadoSnapshot);
-    }
-
-    useEffect(
-        () => {
-            buscarProduto();
-        },
-        [busca]
-    )
+export default function HomeScreen({navigation}) {
     return (
         <View>
-            <Text>Home Screen</Text>
-            <TextInput 
-                label="Buscar"
-                value={busca}
-                onChangeText={setBusca}
-            />
+          <View>
+            <Text style={{ textAlign: "center", fontSize: 20, marginBottom: "5px"}}>
+              Seja bem vindo!
+            </Text>
+            <Button
+              mode="contained"
+              style={{
+                color: "#fff",
+              }}
+              onPress={() => {
+                navigation.navigate("FrutaScreen");
+              }}
+            >
+              Fruta
+            </Button>
+            <Button
+              mode="contained"
+              style={{
+                color: "#fff",
+              }}
+              onPress={() => {
+                navigation.navigate("CarroScreen");
+              }}
+            >
+              Carro
+            </Button>
+            <Button
+              mode="contained"
+              style={{
+                color: "#fff",
+              }}
+              onPress={() => {
+                navigation.navigate("PessoaScreen");
+              }}
+            >
+              Pessoa
+            </Button>
+            <Button
+              mode="contained"
+              style={{
+                color: "#fff",
+              }}
+              onPress={() => {
+                navigation.navigate("CorScreen");
+              }}
+            >
+              Cor
+            </Button>
+            <Button
+              mode="contained"
+              style={{
+                color: "#fff",
+              }}
+              onPress={() => {
+                navigation.navigate("AnimalScreen");
+              }}
+            >
+              Animal
+            </Button>
+          </View>
         </View>
     )
 }
