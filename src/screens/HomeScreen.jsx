@@ -8,15 +8,19 @@ import { db } from "../config/firebase";
      */
 export default function HomeScreen({navigation}) {
     return (
-        <View>
-          <View>
-            <Text style={{ textAlign: "center", fontSize: 20, marginBottom: "5px"}}>
+        <View style={{ alignItems: "center", display: "flex", justifyContent: "content",backgroundColor: "#141414", height: "100%",}}>
+          <View style={{ flex: 1, marginTop: 200, width: 350,}}>
+            <Text style={{ textAlign: "center", fontSize: 40, marginBottom: "5px", color: "white"}}>
               Seja bem vindo!
             </Text>
+            <View style={{ margin: 5}}></View>
             <Button
               mode="contained"
               style={{
                 color: "#fff",
+                border: "4px solid #B50000",
+                backgroundColor: "#FF4340",
+                borderRadius: "5px",
               }}
               onPress={() => {
                 navigation.navigate("FrutaScreen");
@@ -24,10 +28,14 @@ export default function HomeScreen({navigation}) {
             >
               Fruta
             </Button>
+            <View style={{ margin: 5}}></View>
             <Button
               mode="contained"
               style={{
                 color: "#fff",
+                border: "4px solid #B50000",
+                backgroundColor: "#FF4340",
+                borderRadius: "5px",
               }}
               onPress={() => {
                 navigation.navigate("CarroScreen");
@@ -35,10 +43,14 @@ export default function HomeScreen({navigation}) {
             >
               Carro
             </Button>
+            <View style={{ margin: 5}}></View>
             <Button
               mode="contained"
               style={{
                 color: "#fff",
+                border: "4px solid #B50000",
+                backgroundColor: "#FF4340",
+                borderRadius: "5px",
               }}
               onPress={() => {
                 navigation.navigate("PessoaScreen");
@@ -46,10 +58,14 @@ export default function HomeScreen({navigation}) {
             >
               Pessoa
             </Button>
+            <View style={{ margin: 5}}></View>
             <Button
               mode="contained"
               style={{
                 color: "#fff",
+                border: "4px solid #B50000",
+                backgroundColor: "#FF4340",
+                borderRadius: "5px",
               }}
               onPress={() => {
                 navigation.navigate("CorScreen");
@@ -57,16 +73,35 @@ export default function HomeScreen({navigation}) {
             >
               Cor
             </Button>
+            <View style={{ margin: 5}}></View>
             <Button
               mode="contained"
               style={{
                 color: "#fff",
+                border: "4px solid #B50000",
+                backgroundColor: "#FF4340",
+                borderRadius: "5px",
               }}
               onPress={() => {
                 navigation.navigate("AnimalScreen");
               }}
             >
               Animal
+            </Button>
+            <View style={{ margin: 5}}></View>
+            <Button
+              mode="contained"
+              style={{
+                color: "#fff",
+                border: "4px solid #B50000",
+                backgroundColor: "#FF4340",
+                borderRadius: "5px",
+              }}
+              onPress={() => {
+                navigation.navigate("ProdutoScreen");
+              }}
+            >
+              Produto
             </Button>
           </View>
         </View>

@@ -17,7 +17,7 @@ export default function RootNavigation() {
     <NavigationContainer>
       <Stack.Navigator>
         {/* <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false,}} /> */}
-        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: true}} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}} />
         <Stack.Screen name="PessoaScreen" component={PessoaScreen} options={{headerShown: true}} />
         <Stack.Screen name="AnimalScreen" component={AnimalScreen} options={{headerShown: true}} />
         <Stack.Screen name="CarroScreen" component={CarroScreen} options={{headerShown: true}} />

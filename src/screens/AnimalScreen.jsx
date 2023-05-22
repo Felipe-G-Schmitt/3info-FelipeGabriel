@@ -32,24 +32,35 @@ export default function AnimalScreen({ navigation }) {
         [busca]
     )
     return (
-        <View>
-            <Text>Animal Screen</Text>
+        <View style={{ alignItems: "center", backgroundColor: "#141414", height: "100%"}}>
+            <View style={{ width: 350, border: "#FF4340 2px solid", backgroundColor: "", padding: 20, borderRadius: 10, justifyContent: "center", alignItems: "center", marginTop: 200}}>
+            <Text style={{ color: "white", fontSize: 23, marginBottom: 30}}>Pesquise o nome do animal:</Text>
             <TextInput 
                 label="Buscar"
+                underlineColor="white"
+                activeUnderlineColor="white"
+                placeholderTextColor={"white"}
+                placeholder="Digite o nome do animal"
+                textColor="white"
+                style={{ backgroundColor: "73449C", width: "100%", color: "white",}}
                 value={busca}
                 onChangeText={setBusca}
             />
-            <FlatList
+            <View style={{ alignContent: "center",marginTop: 30, border:"2px solid #FF4340", padding: 20, borderRadius: 3}}>
+                <Text style={{ color: "white", marginBottom: 10, fontSize: 20}}>Resultado: </Text>
+                <FlatList
                 data={resultado}
                 renderItem={({item}) => (
                     <View>
-                    <Text>Nome: {item.nome}</Text>
-                    <Text>Espécie: {item.especie}</Text>
-                    <Text>Peso: {item.peso}</Text>
+                    <Text style={{ color: "white", fontSize: 15,}}>{`\u2022 ${item.nome}`}</Text>
+                    <Text style={{ color: "white", fontSize: 15}}>{`\u2022 ${item.especie}`}</Text>
+                    <Text style={{ color: "white", fontSize: 15}}>{`\u2022 ${item.peso}`}</Text>
                     </View>
                 )}
                 key={(item) => item.id}
-            />
+                />
+            </View>
+            </View>
         </View>
     )
 }
